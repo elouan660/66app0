@@ -1,3 +1,24 @@
+from tkinter import *
+from time import *
+#Tests Tkinter
+#Apparence fenetre
+fenetre = Tk()
+fenetre.call('wm', 'iconphoto', fenetre._w, PhotoImage(file='images/icon.gif'))
+fenetre.title("66app0 tkinter 0.0")
+fenetre.geometry("1080x720")
+fenetre.minsize(480, 360)
+fenetre.config(background='#993a2d')
+#Contenu fenetre
+frame = Frame(fenetre, bg='#993a2d')
+
+label_title = Label(frame, text="Hello world", font=("Arial", 40), bg='#993a2d', fg='#ffffff')
+label_title.pack(expand=YES)
+
+label_subtitle = Label(frame, text="Hello morld", font=("Arial", 26), bg='#993a2d', fg='#ffffff')
+label_subtitle.pack(expand=YES)
+
+frame.pack(expand=YES)
+fenetre.mainloop()
 #Définition des couleurs bash
 class color:
     green = '\033[92m'
