@@ -14,7 +14,7 @@ frame = Frame(fenetre, bg='#993a2d')
 label_title = Label(frame, text="Hello world", font=("Arial", 40), bg='#993a2d', fg='#ffffff')
 label_title.pack(expand=YES)
 
-label_subtitle = Label(frame, text="Hello morld", font=("Arial", 26), bg='#993a2d', fg='#ffffff')
+label_subtitle = Entry(frame, font=("Arial", 26), bg='#993a2d', fg='#ffffff')
 label_subtitle.pack(expand=YES)
 
 frame.pack(expand=YES)
