@@ -26,6 +26,9 @@ class color:
     red = '\033[91m'
     reset = '\033[0m'
     blue = '\033[0;34m'
+
+def color(message):
+
 #titre
 print(f"""{color.yellow}
   /$$$$$$   /$$$$$$                                 /$$$$$$
