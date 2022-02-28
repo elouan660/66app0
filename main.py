@@ -1,3 +1,5 @@
+import os
+import time
 #Définition des couleurs bash
 class color:
     green = '\033[92m'
@@ -39,7 +41,8 @@ class rtn:
 #ouverture d'un fichier texte
 system = f"{color.yellow}system> {color.reset}"
 user = f"{color.green}user> {color.reset}"
-
+rtn.msg("Voici les fichiers disponibles:")
+os.system("ls")
 try:
     rtn.msg("Entrez le nom du fichier")
     fileOpen = input(user)
@@ -86,7 +89,8 @@ try:
             rtn.iscorrect(0)
             print('')
             rtn.score()
-            rtn.msg("veuillez entrer 'clear' après la fin du programme")
+            sleep("5")
+            os.system("clear")
             fail = 1
             break
     if fail == 0:
