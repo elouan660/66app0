@@ -1,5 +1,5 @@
 import os
-import time
+from time import *
 #Définition des couleurs bash
 class color:
     green = '\033[92m'
@@ -89,13 +89,15 @@ try:
             rtn.iscorrect(0)
             print('')
             rtn.score()
-            sleep("5")
-            os.system("clear")
             fail = 1
             break
     if fail == 0:
         print('')
         rtn.msg("Félicitation, c'est un sans faute")
         rtn.score()
+    rtn.msg("Entrez c pour clear, entrez autre chose sinon")
+    clear = input(user)
+    if clear == "c":
+        os.system("clear")
 except FileNotFoundError:
     print()
