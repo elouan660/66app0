@@ -4,3 +4,4 @@ Après avoir lancé le programme, un ficher sera créé, vous devez placer vos m
 molière:dramaturge:
 ikea:magasin:"
 etc...
+(comme les fichiers texe que vous trouver dans ce dossier)
