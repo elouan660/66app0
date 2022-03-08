@@ -64,14 +64,14 @@ except FileNotFoundError:
         rtn.msg("fichier non créé")
         exit()
 
-#Apprentissage
-fail = 0
-swap = input("voulez vous activer le mode inversé? (y/n)")
+swap = input(" voulez vous activer le mode inversé? (y/n)")
 if swap == 'y':
     swap = 1
 else:
     swap = 0
 
+#Apprentissage
+fail = 0
 try:
     file = open(fileOpen, "r")
     rtn.msg("Programme lancé")
