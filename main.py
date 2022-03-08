@@ -66,6 +66,12 @@ except FileNotFoundError:
 
 #Apprentissage
 fail = 0
+swap = input("voulez vous activer le mode inversé? (y/n)")
+if swap == 'y':
+    swap = 1
+else:
+    swap = 0
+
 try:
     file = open(fileOpen, "r")
     rtn.msg("Programme lancé")
@@ -89,8 +95,8 @@ try:
             rtn.iscorrect(0)
             print('')
             rtn.score()
-            fail = 1
-            break
+        fail = 1
+        break
     if fail == 0:
         print('')
         rtn.msg("Félicitation, c'est un sans faute")
