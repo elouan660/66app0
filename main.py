@@ -47,17 +47,18 @@ try:
     rtn.msg("Entrez le nom du fichier")
     fileOpen = input(user)
     file = open(fileOpen, "r")
-    rtn.msg(fileOpen + " trouvé, ouverture effectuée")
+    rtn.msg(f"{fileOpen} trouvé, ouverture effectuée")
     file.close()
 except FileNotFoundError:
-    rtn.error(fileOpen + " non trouvé, souhaitez vous le créer? (y/n)")
+    rtn.error(f"{fileOpen} non trouvé, souhaitez vous le créer? (y/n)")
     createData = input('>')
     if createData == "y":
         file = open(fileOpen, "x")
         file.close()
         file = open(fileOpen, "r")
-        rtn.msg("fichier vide créé")
+        rtn.msg("fichier créé")
         file.close()
+        os.system(f"nano {fileOpen}")
         rtn.msg("fichier fermé")
         exit()
     else:
