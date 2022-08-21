@@ -30,7 +30,7 @@ class color:
 def color(message):
 
 #titre
-print(f"""{color.yellow}
+ print(f"""{color.yellow}
   /$$$$$$   /$$$$$$                                 /$$$$$$
  /$$__  $$ /$$__  $$                               /$$$_  $$
 | $$  \__/| $$  \__/  /$$$$$$   /$$$$$$   /$$$$$$ | $$$$\ $$
