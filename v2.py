@@ -1,4 +1,5 @@
 import os
+import random as math
 from time import *
 #Définition des couleurs bash
 class color:
@@ -17,7 +18,7 @@ print(f"""{color.yellow}
 | $$  \ $$| $$  \ $$ /$$__  $$| $$  | $$| $$  | $$| $$ \ $$$
 |  $$$$$$/|  $$$$$$/|  $$$$$$$| $$$$$$$/| $$$$$$$/|  $$$$$$/
  \______/  \______/  \_______/| $$____/ | $$____/  \______/
-  Version 0.2 par elouan660   | $$      | $$
+  Version 0.3 par elouan660   | $$      | $$
         pour bash             | $$      | $$
                               |__/      |__/
  {color.reset}""")
@@ -31,13 +32,7 @@ class rtn:
         if bin == 1:
             print(f"{color.blue}Programme: {color.green}Correct{color.reset}")
         elif bin == 0:
-            print(f"{color.blue}Programme: {color.red}Incorrect: {color.reset}{word[wordcount]}")
-    def score():
-        if wordcount//2 < tempo:
-            print(f"{color.yellow}Score: {color.red}{wordcount//2}/{tempo}{color.reset}")
-        else:
-            print(f"{color.yellow}Score: {color.green}{wordcount//2}/{tempo}{color.reset}")
-
+            print(f"{color.blue}Programme: {color.red}Incorrect: {color.reset}{word[ale1]}")
 #ouverture d'un fichier texte
 system = f"{color.yellow}system> {color.reset}"
 user = f"{color.green}user> {color.reset}"
@@ -65,42 +60,36 @@ except FileNotFoundError:
         rtn.msg("fichier non créé")
         exit()
 
-#Apprentissage
-fail = 0
-try:
-    file = open(fileOpen, "r")
-    rtn.msg("Programme lancé")
-    list = file.read()
-    word = list.split(":")
-    wordcount = 0
+score = 0
+wordcount0 = 0
+wordcount1 = 0
+file = open(fileOpen, "r")
+list0 = file.read().split("|")
+for line in list0:
+    wordcount0 += 1
+for line in list0:
     print('')
-    tempo = 0
-    fail = 0
-    for ligne in word:
-        tempo += 1
-    tempo //= 2
-    for x in range(tempo):
-        print(word[wordcount])
-        réponse = input(">")
-        wordcount += 1
-        if word[wordcount] == réponse:
-            rtn.iscorrect(1)
-            wordcount += 1
-        else:
-            rtn.iscorrect(0)
-            print('')
-            rtn.score()
-            fail = 1
-            break
-    if fail == 0:
-        print('')
-        rtn.msg("Félicitation, c'est un sans faute")
-        rtn.score()
-    rtn.msg("Entrez c pour clear, entrez autre chose sinon")
-    clear = input(user)
-    if clear == "c":
-        os.system("clear")
-except FileNotFoundError:
-    print()
+    word = line.split(":")
+    wordcount1 = wordcount1+1
+    print(f"[{wordcount1}/{wordcount0}]")
+    ale0 = math.randint(0, 1)
+    if ale0 == 1:
+        ale1 = 0
+    else:
+        ale1 = 1
+    rtn.msg(word[ale0])
+    réponse = input(">")
+    if réponse == word[ale1]:
+        rtn.iscorrect(1)
+        score += 1
+    else:
+        rtn.iscorrect(0)
 
-list = fileOpen
+if score > wordcount0/2:
+    print(color.green)
+else:
+    print(color.red)
+print(f"score:{score}/{wordcount0}")
+
+    
+     
