@@ -10,3 +10,4 @@ word1:word2 \n
 `
 
 On the left side a langage and on the other side the other langage
+You don't have to write "\n", it is just a carriage return
