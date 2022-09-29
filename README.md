@@ -1,7 +1,12 @@
 # 66app0
-Après avoir lancé le programme, un ficher sera créé, vous devez placer vos mots de la manières suivante:
-"rayman:jeu vidéo:
-molière:dramaturge:
-ikea:magasin:"
-etc...
-(comme les fichiers texe que vous trouver dans ce dossier)
+This program can be used to learn some vocabulary
+You have to create a text file, into this file you have to write your words like this:
+
+`
+word1:word2
+|word3:word4
+|word5:word6
+...
+`
+
+On the left side a langage and on the other side the other langage
