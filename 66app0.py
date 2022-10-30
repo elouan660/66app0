@@ -89,7 +89,7 @@ if score > wordcount0/2:
     print(color.green)
 else:
     print(color.red)
-print(f"score:{score}/{wordcount0}")
+print(f"score: {score}/{wordcount0}")
 
     
      
